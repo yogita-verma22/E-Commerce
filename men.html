@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(rgba(220, 27, 198, 0.724), rgba(5, 229, 225, 0.364));
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.logo h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Search Bar */
+.search-bar {
+    width: 40%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+
+
+/* Navigation Icons */
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.nav-item, .heart {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    margin-left: 20px;
+    padding: 8px;
+    transition: 0.3s;
+}
+
+.nav-item:hover {
+ color: white;
+}
+.heart:hover {
+    color: red;
+}
+
+.filter label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.dropbtn {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+        h2{
+   text-align: center;
+    font-size: 24px;
+    margin: 20px 0px;
+        }
+    .item {
+        background: linear-gradient(pink, rgba(232, 27, 201, 0.472));
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .gif{
+        padding: 10px;
+    width: 90%;
+    background: linear-gradient(pink, rgba(232, 27, 201, 0.472));
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    }
+    .gif img{
+    width: 50%;
+    height: 350px;
+}
+    .item-img{
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 10px;
+        width: 280px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .img img{
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+    p {
+    position: relative;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    }
+    .btn{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+.btn button {
+    border: none;
+    background: linear-gradient(rgba(220, 27, 198, 0.724), rgba(5, 229, 225, 0.364));
+    color: black;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.w-btn:hover{
+    color: red;
+}
+.c-btn:hover{
+    color: white;
+}
+footer {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    text-align: center;
+    background: linear-gradient(rgba(220, 27, 198, 0.724), rgba(5, 229, 225, 0.364));
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer div {
+    margin: 10px;
+}
+
+h3 {
+    color: black;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+footer a:hover {
+    color: white;
+}
+
+footer img {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+footer img:hover {
+    transform: scale(1.1);
+}
+
+footer p {
+    width: 100%;
+   color: #333;
+    font-size: 20px;
+    margin-top: 20px;
+}
+@media (max-width: 1024px) {
+    .item-img {
+        flex: 1 1 calc(33.33% - 20px);
+    }
+    header {
+        flex-wrap: wrap;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-list {
+        margin-top: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .item-img {
+        flex: 1 1 calc(50% - 20px);
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .logo h1 {
+        font-size: 22px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+ 
+    .nav-list {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-item {
+        font-size: 18px;
+        margin: 0 10px;
+    }
+}
+@media (max-width: 480px) {
+    .item-img {
+        flex: 1 1 100%;
+    }
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-item {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>ShopSphere</h1>
+        </div>
+        <input type="text" placeholder="Search for products..." class="search-bar">
+        <section class="filter">
+            <label for="category">Category</label>
+            <div class="dropdown">
+                <button class="dropbtn">Select Category</button>
+                <div class="dropdown-content">
+                    <a href="index.html">All</a>
+                    <a href="men.html">Men</a>
+                    <a href="women.html">Women</a>
+                    <a href="kids.html">Kids</a>
+                    <a href="footwear.html">Bags & Footwear</a>
+                    <a href="kitchen.html">Home & Kitchen</a>
+                    <a href="jewellery.html">Jewellery & Accessories</a>
+                    <a href="electronic.html">Electronics</a>
+                    <a href="books.html">Sports, Fitness & Books</a>
+                </div>
+            </div>
+        </section>
+        <nav>
+            <ul class="nav-list">
+                <li>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="heart">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="women">
+        <div class="gif">
+            <img src="https://i.makeagif.com/media/10-02-2022/0mjcmB.gif" alt="watch">
+            <img src="https://media.tenor.com/1rDbNU4AHOUAAAAM/fashion.gif" alt="cloth">
+        </div>
+         <!--clothing section start-->
+    <div id="men-wear">
+        <div> <h2>Men's wear</h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/young-fashion-mans-legs-with-white-sneakers-white-shoes_281858-2178.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="pants">
+                </div>
+                <div class="item-info">
+                    <p>Unique Men Track Pants</p>
+                    <p>Price: Rs.340</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/style-everyday-mens-casual-shirt-photoshoot-poses-boys-shirt_463958-87.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="shirts">
+                </div>
+                <div class="item-info">
+                    <p>Comfy Latest Men Shirts</p>
+                    <p>Price: Rs.200</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/young-handsome-fashion-model-man_20279-818.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="jeans">
+                </div>
+                <div class="item-info">
+                    <p>Elegant Unique Men Jeans</p>
+                    <p>Price: Rs.350</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/indian-man-traditional-wear-kurta-pyjama-cloths-male-fashion-model-sherwani-posing-standing-against-brown-grunge-background-selective-focus_466689-45367.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="kurta">
+                </div>
+                <div class="item-info">
+                    <p>Essential Men Kurta Sets</p>
+                    <p>Price: Rs.390</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/portrait-modern-young-man-using-his-mobile-phone-street_519356-415.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="Jackets">
+                </div>
+                <div class="item-info">
+                    <p>Stylish Fabulous Men Jackets</p>
+                    <p>Price: Rs.550</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/cheerful-arab-man-printed-shirt-making-heart-gesture-with-arms-raised-green-background_292052-8137.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="Sweatshirts">
+                </div>
+                <div class="item-info">
+                    <p>Graceful Men Sweatshirts</p>
+                    <p>Price: Rs.375</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    <!--belt section start-->
+    <div id="betl">
+        <div> <h2>Men's Belts & Wallets</h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/437526881/tlhbb_400.webp" alt="belt">
+                </div>
+                <div class="item-info">
+                    <p>Style Modern Men Belts</p>
+                    <p>Price: Rs.250</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/black-leather-wallet-button-white-background-top-view_158023-3117.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="wallets">
+                </div>
+                <div class="item-info">
+                    <p>Styles Latest Men Wallets</p>
+                    <p>Price: Rs.142</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/407547929/7bd5c_400.webp" alt="belt">
+                </div>
+                <div class="item-info">
+                    <p>Casual Trendy Men Belts</p>
+                    <p>Price: Rs.162</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/65035349/6x9eg_400.webp" alt="wallets">
+                </div>
+                <div class="item-info">
+                    <p>Casual Unique Men Wallets</p>
+                    <p>Price: Rs.222</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/368640465/d9s2l_400.webp" alt="belt">
+                </div>
+                <div class="item-info">
+                    <p>Modern Men Belts</p>
+                    <p>Price: Rs.110</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/295948619/fyvif_400.webp" alt="belt">
+                </div>
+                <div class="item-info">
+                    <p>Casual Latest Men Belts</p>
+                    <p>Price: Rs.199</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+<!--Watches section start-->
+    <div id="">
+        <div> <h2>Watches</h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-vector/smart-watch-realistic_78370-593.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="watch">
+                </div>
+                <div class="item-info">
+                    <p>Trendy Digital Watches</p>
+                    <p>Price: Rs.158</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/woman-taking-break-from-running_23-2148291437.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="watch">
+                </div>
+                <div class="item-info">
+                    <p>Men Sports Watches</p>
+                    <p>Price: Rs.194</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-vector/golden-watch-luxury-icon_24877-82477.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="watch">
+                </div>
+                <div class="item-info">
+                    <p>Trendy Analog Watches</p>
+                    <p>Price: Rs.333</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/wallpaper-watch_686659-121.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="watch">
+                </div>
+                <div class="item-info">
+                    <p>Trendy Digital Watches</p>
+                    <p>Price: Rs.207</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/luxury-man-wrist-watches-placed-timber_85778-133.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="watch">
+                </div>
+                <div class="item-info">
+                    <p>Attractive Men Watches</p>
+                    <p>Price: Rs.234</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/closeup-shot-modern-cool-black-digital-watch-with-brown-leather-strap_181624-3545.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="watch">
+                </div>
+                <div class="item-info">
+                    <p>Men Analog Watches</p>
+                    <p>Price: Rs.254</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    <!--grooming section start-->
+    <div id="Grooming">
+        <div> <h2>Men's Grooming</h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/essential-oil-lime-oil_155003-2565.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="oil">
+                </div>
+                <div class="item-info">
+                    <p>Glowocean Beard Growth Oil</p>
+                    <p>Price: Rs.148</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-psd/barber-accessory-transparent_7939-3397.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="kit">
+                </div>
+                <div class="item-info">
+                    <p>Classy Manicure & Pedicure Kit</p>
+                    <p>Price: Rs.250</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/462045935/s47ov_400.webp" alt="razors">
+                </div>
+                <div class="item-info">
+                    <p>Classic Face Razors</p>
+                    <p>Price: Rs.154</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/387758278/skccs_400.webp" alt="wax">
+                </div>
+                <div class="item-info">
+                    <p>Hair Wax For Men</p>
+                    <p>Price: Rs.212</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/494099201/kywud_400.webp" alt="trimmer">
+                </div>
+                <div class="item-info">
+                    <p>Trendy New Trimmers</p>
+                    <p>Price: Rs.181</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/381201470/bll46_400.webp" alt="rollers">
+                </div>
+                <div class="item-info">
+                    <p>Everyday Face Rollers</p>
+                    <p>Price: Rs.108</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--footer section-->
+<footer>
+    <div class="contact">
+        <h3>Customer Policies</h3>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Returns</a>
+        <a href="#">FAQ</a>
+    </div>
+    <div class="social">
+        <h3>Reach out to us</h3>
+        <a href="#"><img
+                src="https://img.freepik.com/free-vector/instagram-icon_1057-2227.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="insta"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/free-psd/social-media-logo-design_23-2151296987.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="facebook"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/free-vector/youtube-player-icon-with-flat-design_23-2147839964.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="youtube"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/free-vector/twitter-new-logo-x-icon-design_1017-45424.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="twitter"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/premium-photo/linkdin-logo_1080029-102.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="linkdin"></a>
+    </div>
+    <p>© 2024 ShopSphere</p>
+</footer>
+    </body>
+</html>
+
+</body>
+</html>
+

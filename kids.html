@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kid's</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(rgba(220, 27, 198, 0.724), rgba(5, 229, 225, 0.364));
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.logo h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Search Bar */
+.search-bar {
+    width: 40%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+
+
+/* Navigation Icons */
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.nav-item, .heart {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    margin-left: 20px;
+    padding: 8px;
+    transition: 0.3s;
+}
+
+.nav-item:hover {
+ color: white;
+}
+.heart:hover {
+    color: red;
+}
+
+.filter label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.dropbtn {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+        h2{
+   text-align: center;
+    font-size: 24px;
+    margin: 20px 0px;
+        }
+    .item {
+        background: linear-gradient(pink, rgba(232, 27, 201, 0.472));
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .gif{
+        padding: 10px;
+    width: 90%;
+    background: linear-gradient(pink, rgba(232, 27, 201, 0.472));
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    }
+    .gif img{
+    width: 50%;
+    height: 350px;
+}
+    .item-img{
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 10px;
+        width: 280px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .img img{
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+    p {
+    position: relative;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    }
+    .btn{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+.btn button {
+    border: none;
+    background: linear-gradient(rgba(220, 27, 198, 0.724), rgba(5, 229, 225, 0.364));
+    color: black;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.w-btn:hover{
+    color: red;
+}
+.c-btn:hover{
+    color: white;
+}
+footer {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    text-align: center;
+    background: linear-gradient(rgba(220, 27, 198, 0.724), rgba(5, 229, 225, 0.364));
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer div {
+    margin: 10px;
+}
+
+h3 {
+    color: black;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+footer a:hover {
+    color: white;
+}
+
+footer img {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+footer img:hover {
+    transform: scale(1.1);
+}
+
+footer p {
+    width: 100%;
+   color: #333;
+    font-size: 20px;
+    margin-top: 20px;
+}
+@media (max-width: 1024px) {
+    .item-img {
+        flex: 1 1 calc(33.33% - 20px);
+    }
+    header {
+        flex-wrap: wrap;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-list {
+        margin-top: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .item-img {
+        flex: 1 1 calc(50% - 20px);
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .logo h1 {
+        font-size: 22px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+ 
+    .nav-list {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-item {
+        font-size: 18px;
+        margin: 0 10px;
+    }
+}
+@media (max-width: 480px) {
+    .item-img {
+        flex: 1 1 100%;
+    }
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-item {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>ShopSphere</h1>
+        </div>
+        <input type="text" placeholder="Search for products..." class="search-bar">
+        <section class="filter">
+            <label for="category">Category</label>
+            <div class="dropdown">
+                <button class="dropbtn">Select Category</button>
+                <div class="dropdown-content">
+                    <a href="index.html">All</a>
+                    <a href="men.html">Men</a>
+                    <a href="women.html">Women</a>
+                    <a href="kids.html">Kids</a>
+                    <a href="footwear.html">Bags & Footwear</a>
+                    <a href="kitchen.html">Home & Kitchen</a>
+                    <a href="jewellery.html">Jewellery & Accessories</a>
+                    <a href="electronic.html">Electronics</a>
+                    <a href="books.html">Sports, Fitness & Books</a>
+                </div>
+            </div>
+        </section>
+        <nav>
+            <ul class="nav-list">
+                <li>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="heart">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="women">
+        <div class="gif">
+            <img src="https://i.pinimg.com/originals/a0/92/b8/a092b8f63d3865bc38b8488c2b45b23b.gif" alt="cloth">
+            <img src="https://www.manhattantoy.com/cdn/shop/files/treetop-ezgif.com-optimize_1.gif?v=1716487045&width=876" alt="toy">
+        </div>
+         <!--clothing section start-->
+    <div id="kids-wear">
+        <div> <h2>Kid's wear</h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/396067673/dgycv_400.webp" alt="dress">
+                </div>
+                <div class="item-info">
+                    <p>Girls Froks & Dresses</p>
+                    <p>Price: Rs.103</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/388402783/9xsu5_400.webp" alt="boy">
+                </div>
+                <div class="item-info">
+                    <p>Boys Top & Bottom Sets</p>
+                    <p>Price: Rs.182</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/395736597/flkc7_400.webp" alt="cloth">
+                </div>
+                <div class="item-info">
+                    <p>Trendy Clothing Sets</p>
+                    <p>Price: Rs.350</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/231529913/wn2oo_400.webp" alt="lehanga">
+                </div>
+                <div class="item-info">
+                    <p>Kids Girls Lenanga Cholis</p>
+                    <p>Price: Rs.290</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/298302270/hjoix_400.webp" alt="">
+                </div>
+                <div class="item-info">
+                    <p>Kids Boys Sherwanis</p>
+                    <p>Price: Rs.230</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/485680900/0i5ul_400.webp" alt="jacket">
+                </div>
+                <div class="item-info">
+                    <p>Jackets & Coats</p>
+                    <p>Price: Rs.330</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    <!--toys section start-->
+    <div id="toys">
+        <div> <h2>Kid's Toys</h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/461135630/du4b0_400.webp" alt="toys">
+                </div>
+                <div class="item-info">
+                    <p>Kids Stuffed Toys</p>
+                    <p>Price: Rs.150</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/142797804/1cxki_400.webp" alt="toys">
+                </div>
+                <div class="item-info">
+                    <p>Kids Reading & Weiting Toys</p>
+                    <p>Price: Rs.310</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/412142493/irpnu_400.webp" alt="toy">
+                </div>
+                <div class="item-info">
+                    <p>Kids Pretend Play Sets</p>
+                    <p>Price: Rs.282</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/485519422/i0fw9_400.webp" alt="toy">
+                </div>
+                <div class="item-info">
+                    <p>Kaleidoscope & Projrctors</p>
+                    <p>Price: Rs.490</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/390266471/s3ljt_400.webp" alt="toy">
+                </div>
+                <div class="item-info">
+                    <p>Kids Educational toys</p>
+                    <p>Price: Rs.200</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/476850886/gy9ad_400.webp" alt="toy">
+                </div>
+                <div class="item-info">
+                    <p>Free Wheel Toys</p>
+                    <p>Price: Rs.400</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+<!--Healthcare section start-->
+    <div id="">
+        <div> <h2>Kid's Healthcare</h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/218248648/baikt_400.webp" alt="blanket">
+                </div>
+                <div class="item-info">
+                    <p>Alluring Baby Blanket</p>
+                    <p>Price: Rs.328</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/143819573/z5fzt_400.webp" alt="towels">
+                </div>
+                <div class="item-info">
+                    <p>Classic Baby Towels</p>
+                    <p>Price: Rs.160</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/baby-bed-white-background_1170794-229030.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="nets">
+                </div>
+                <div class="item-info">
+                    <p>Baby Mosquito Nets</p>
+                    <p>Price: Rs.305</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/pillow-interior-white-living-luxury_1203-4639.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="pillows">
+                </div>
+                <div class="item-info">
+                    <p>Graceful Baby Pillows</p>
+                    <p>Price: Rs.100</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/look-from-little-baby-lying-wooden-bed-with-white-fu_1304-4897.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="blanket">
+                </div>
+                <div class="item-info">
+                    <p>Gorgeous Baby Blanket</p>
+                    <p>Price: Rs.150</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/smoothie-mix-strawberries-blueberries_58460-2083.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="towel">
+                </div>
+                <div class="item-info">
+                    <p>Attractive Baby Towels</p>
+                    <p>Price: Rs.174</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    <!--Accessories section start-->
+    <div id="Accessories">
+        <div> <h2>Kid's Accessories</h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/440936656/o6bwk_400.webp" alt="shoes">
+                </div>
+                <div class="item-info">
+                    <p>Sports Shoes For Boys</p>
+                    <p>Price: Rs.350</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-vector/notebook-with-kid-drawings-pencils_23-2147543943.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="book">
+                </div>
+                <div class="item-info">
+                    <p>Drawing Pads & Books</p>
+                    <p>Price: Rs.110</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/56957241/iesls_400.webp" alt="Watches">
+                </div>
+                <div class="item-info">
+                    <p>Kids Unisex Watches</p>
+                    <p>Price: Rs.150</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/449204133/nijku_400.webp" alt="pencil">
+                </div>
+                <div class="item-info">
+                    <p>Trendy Pencil Cases</p>
+                    <p>Price: Rs.142</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/445202839/6wciw_400.webp" alt="glass">
+                </div>
+                <div class="item-info">
+                    <p>Kids Unisex Sunglasses</p>
+                    <p>Price: Rs.200</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/341165887/gz3m5_400.webp" alt="bag">
+                </div>
+                <div class="item-info">
+                    <p>Unisex Bags & Backpacks</p>
+                    <p>Price: Rs.188</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--footer section-->
+<footer>
+    <div class="contact">
+        <h3>Customer Policies</h3>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Returns</a>
+        <a href="#">FAQ</a>
+    </div>
+    <div class="social">
+        <h3>Reach out to us</h3>
+        <a href="#"><img
+                src="https://img.freepik.com/free-vector/instagram-icon_1057-2227.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="insta"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/free-psd/social-media-logo-design_23-2151296987.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="facebook"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/free-vector/youtube-player-icon-with-flat-design_23-2147839964.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="youtube"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/free-vector/twitter-new-logo-x-icon-design_1017-45424.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="twitter"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/premium-photo/linkdin-logo_1080029-102.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="linkdin"></a>
+    </div>
+    <p>© 2024 ShopSphere</p>
+</footer>
+    </body>
+</html>
+
+</body>
+</html>
+

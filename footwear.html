@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footwear</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(rgba(220, 27, 198, 0.724), rgba(5, 229, 225, 0.364));
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.logo h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Search Bar */
+.search-bar {
+    width: 40%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+
+
+/* Navigation Icons */
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.nav-item, .heart {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    margin-left: 20px;
+    padding: 8px;
+    transition: 0.3s;
+}
+
+.nav-item:hover {
+ color: white;
+}
+.heart:hover {
+    color: red;
+}
+
+.filter label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.dropbtn {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+        h2{
+   text-align: center;
+    font-size: 24px;
+    margin: 20px 0px;
+        }
+    .item {
+        background: linear-gradient(pink, rgba(232, 27, 201, 0.472));
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .gif{
+        padding: 10px;
+    width: 90%;
+    background: linear-gradient(pink, rgba(232, 27, 201, 0.472));
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    }
+    .gif img{
+    width: 50%;
+    height: 350px;
+}
+    .item-img{
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 10px;
+        width: 280px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .img img{
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+    p {
+    position: relative;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    }
+    .btn{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+.btn button {
+    border: none;
+    background: linear-gradient(rgba(220, 27, 198, 0.724), rgba(5, 229, 225, 0.364));
+    color: black;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.w-btn:hover{
+    color: red;
+}
+.c-btn:hover{
+    color: white;
+}
+footer {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    text-align: center;
+    background: linear-gradient(rgba(220, 27, 198, 0.724), rgba(5, 229, 225, 0.364));
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer div {
+    margin: 10px;
+}
+
+h3 {
+    color: black;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+footer a:hover {
+    color: white;
+}
+
+footer img {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+footer img:hover {
+    transform: scale(1.1);
+}
+
+footer p {
+    width: 100%;
+   color: #333;
+    font-size: 20px;
+    margin-top: 20px;
+}
+@media (max-width: 1024px) {
+    .item-img {
+        flex: 1 1 calc(33.33% - 20px);
+    }
+    header {
+        flex-wrap: wrap;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-list {
+        margin-top: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .item-img {
+        flex: 1 1 calc(50% - 20px);
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .logo h1 {
+        font-size: 22px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+ 
+    .nav-list {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-item {
+        font-size: 18px;
+        margin: 0 10px;
+    }
+}
+@media (max-width: 480px) {
+    .item-img {
+        flex: 1 1 100%;
+    }
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-item {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>ShopSphere</h1>
+        </div>
+        <input type="text" placeholder="Search for products..." class="search-bar">
+        <section class="filter">
+            <label for="category">Category</label>
+            <div class="dropdown">
+                <button class="dropbtn">Select Category</button>
+                <div class="dropdown-content">
+                    <a href="index.html">All</a>
+                    <a href="men.html">Men</a>
+                    <a href="women.html">Women</a>
+                    <a href="kids.html">Kids</a>
+                    <a href="footwear.html">Bags & Footwear</a>
+                    <a href="kitchen.html">Home & Kitchen</a>
+                    <a href="jewellery.html">Jewellery & Accessories</a>
+                    <a href="electronic.html">Electronics</a>
+                    <a href="books.html">Sports, Fitness & Books</a>
+                </div>
+            </div>
+        </section>
+        <nav>
+            <ul class="nav-list">
+                <li>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="heart">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="women">
+        <div class="gif">
+            <img src="https://25.media.tumblr.com/2ace6339e0192133bd028f17449031c9/tumblr_mlgugvfunZ1s9iva9o1_500.gif" alt="footwear">
+            <img src="https://media2.giphy.com/media/VnFaOURSfO3kY/giphy.gif?cid=6c09b952no6dbw3j3kybb9wh7p7v4yne51pmi1rym2ie9bib&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="bag">
+        </div>
+         <!--footwear section start-->
+    <div id="footwear">
+        <div> <h2>Women's Footweare</h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/close-up-fashion-image-woman-s-feet-wearing-vintage-jeans-stylish-red-sneakers-bright-toned-colors_291049-721.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="footwear">
+                </div>
+                <div class="item-info">
+                    <p>Casual Shoes For Women</p>
+                    <p>Price: Rs.350</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/beautiful-straw-hat-with-blue-flip-flops-yellow-vibrant-vivid-background-top-view-flat-lay-summer-travel-vacation-concept_1220-1850.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="footwear">
+                </div>
+                <div class="item-info">
+                    <p>Women Flipflops & Slippers</p>
+                    <p>Price: Rs.150</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/woman-sitting-holding-lavender-flowers_23-2148405246.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="footwear">
+                </div>
+                <div class="item-info">
+                    <p>Trendy Bellies</p>
+                    <p>Price: Rs.450</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/elegant-indian-jutti-adorned-with-detailed-embroidery-vibrant-floral-accents-generative-ai_437323-33602.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="footwear">
+                </div>
+                <div class="item-info">
+                    <p>Women Jutties & Mojaris</p>
+                    <p>Price: Rs.230</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/still-life-spring-wardrobe-switch_23-2150478949.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="footwear">
+                </div>
+                <div class="item-info">
+                    <p>Velvet, Suede Heel Sandals</p>
+                    <p>Price: Rs.350</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/stylish-elegant-trendy-designer-fashionable-eco-leather-women-s-heels-sandals-shoes_647822-930.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="footwear">
+                </div>
+                <div class="item-info">
+                    <p>Latest Women Flats</p>
+                    <p>Price: Rs.122</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    <!--man footwear section start-->
+    <div id="toys">
+        <div> <h2>Men Footwear</h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/mans-feet-standing-subway-train_665346-94174.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="footwear">
+                </div>
+                <div class="item-info">
+                    <p>Fashionable Men Sandals</p>
+                    <p>Price: Rs.205</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/front-view-modern-boy-sitting-skateboard_23-2148423114.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="footwear">
+                </div>
+                <div class="item-info">
+                    <p>Kids Boys Sports Shoes</p>
+                    <p>Price: Rs.250</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/white-sneakers-woman-model_53876-97149.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="footwear">
+                </div>
+                <div class="item-info">
+                    <p>Trendy MEn Casual Shoes</p>
+                    <p>Price: Rs.250</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/high-angle-view-shoes-field_1048944-163844.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="footwear">
+                </div>
+                <div class="item-info">
+                    <p>Sandals For Boys</p>
+                    <p>Price: Rs.280</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/footwear-fashion-photoshoot_905179-178.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="footwear">
+                </div>
+                <div class="item-info">
+                    <p>Voguish Men Loafers</p>
+                    <p>Price: Rs.330</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/man-s-feet-black-trousers-black-shoes-isolated-white-background_41158-11213.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="footwear">
+                </div>
+                <div class="item-info">
+                    <p>Attractive Men Formal Shoes</p>
+                    <p>Price: Rs.300</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--Travel Bags section start-->
+    <div id="bag">
+        <div> <h2>Travel Bags</h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/woman-with-luggage-near-door_1398-3821.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="bag">
+                </div>
+                <div class="item-info">
+                    <p>Trendy Women Trolly Bags</p>
+                    <p>Price: Rs.1100</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/sad-woman-traveler-tourist-getting-lost-facing-problem-travel-bad-travel-experience_46728-2165.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="bag">
+                </div>
+                <div class="item-info">
+                    <p>Women Duffel Bags</p>
+                    <p>Price: Rs.260</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-psd/baggage-prepared-travelling_23-2150739204.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="bag">
+                </div>
+                <div class="item-info">
+                    <p>Men Duffel Bags</p>
+                    <p>Price: Rs.225</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/luggage-with-hawaiian-shirts-with-floral-print-hat_23-2149366081.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="bag">
+                </div>
+                <div class="item-info">
+                    <p>Trolley Bags</p>
+                    <p>Price: Rs.1250</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/arrangement-clothes-accessories-suitcase_23-2149064203.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="bag">
+                </div>
+                <div class="item-info">
+                    <p>Women Travel Accessories</p>
+                    <p>Price: Rs.90</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/brown-roller-laptop-suitcase-isolated-white_67340-325.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="bag">
+                </div>
+                <div class="item-info">
+                    <p>Travel Bags</p>
+                    <p>Price: Rs.999</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    <!--bags section start-->
+    <div id="bag">
+        <div> <h2></h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/351597468/ic34h_400.webp" alt="bag">
+                </div>
+                <div class="item-info">
+                    <p>Fancy Women Slingbags</p>
+                    <p>Price: Rs.120</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/412584853/swnvm_400.webp" alt="bag">
+                </div>
+                <div class="item-info">
+                    <p>Alluring Women Backpacks</p>
+                    <p>Price: Rs.210</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/young-handsome-man-quarry-alone_1303-23776.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="bag">
+                </div>
+                <div class="item-info">
+                    <p>Stylo Men Men Waist Bags</p>
+                    <p>Price: Rs.200</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/handbag-sling-bag-made-brown-leather-minimalist-style-luxurious-retro-color_1048944-881566.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="bag">
+                </div>
+                <div class="item-info">
+                    <p>Men Cross Body Bags</p>
+                    <p>Price: Rs.202</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/456977210/yqkko_400.webp" alt="bag">
+                </div>
+                <div class="item-info">
+                    <p>Stylish Women Potlis</p>
+                    <p>Price: Rs.190</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/woman-holding-python-wallet-violet-background_96943-905.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="bag">
+                </div>
+                <div class="item-info">
+                    <p>Style Modern Women Wallets</p>
+                    <p>Price: Rs.188</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--footer section-->
+<footer>
+    <div class="contact">
+        <h3>Customer Policies</h3>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Returns</a>
+        <a href="#">FAQ</a>
+    </div>
+    <div class="social">
+        <h3>Reach out to us</h3>
+        <a href="#"><img
+                src="https://img.freepik.com/free-vector/instagram-icon_1057-2227.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="insta"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/free-psd/social-media-logo-design_23-2151296987.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="facebook"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/free-vector/youtube-player-icon-with-flat-design_23-2147839964.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="youtube"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/free-vector/twitter-new-logo-x-icon-design_1017-45424.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="twitter"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/premium-photo/linkdin-logo_1080029-102.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="linkdin"></a>
+    </div>
+    <p>© 2024 ShopSphere</p>
+</footer>
+    </body>
+</html>
+
+</body>
+</html>
+

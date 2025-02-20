@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(rgba(220, 27, 198, 0.724), rgba(5, 229, 225, 0.364));
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.logo h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Search Bar */
+.search-bar {
+    width: 40%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+
+
+/* Navigation Icons */
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.nav-item, .heart {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    margin-left: 20px;
+    padding: 8px;
+    transition: 0.3s;
+}
+
+.nav-item:hover {
+ color: white;
+}
+.heart:hover {
+    color: red;
+}
+
+.filter label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.dropbtn {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+        h2{
+   text-align: center;
+    font-size: 24px;
+    margin: 20px 0px;
+        }
+    .item {
+        background: linear-gradient(pink, rgba(232, 27, 201, 0.472));
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .gif{
+        padding: 10px;
+    width: 90%;
+    background: linear-gradient(pink, rgba(232, 27, 201, 0.472));
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    }
+    .gif img{
+    width: 50%;
+    height: 350px;
+}
+    .item-img{
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 10px;
+        width: 280px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .img img{
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+    p {
+    position: relative;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    }
+    .btn{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+.btn button {
+    border: none;
+    background: linear-gradient(rgba(220, 27, 198, 0.724), rgba(5, 229, 225, 0.364));
+    color: black;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.w-btn:hover{
+    color: red;
+}
+.c-btn:hover{
+    color: white;
+}
+footer {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    text-align: center;
+    background: linear-gradient(rgba(220, 27, 198, 0.724), rgba(5, 229, 225, 0.364));
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer div {
+    margin: 10px;
+}
+
+h3 {
+    color: black;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+footer a:hover {
+    color: white;
+}
+
+footer img {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+footer img:hover {
+    transform: scale(1.1);
+}
+
+footer p {
+    width: 100%;
+   color: #333;
+    font-size: 20px;
+    margin-top: 20px;
+}
+@media (max-width: 1024px) {
+    .item-img {
+        flex: 1 1 calc(33.33% - 20px);
+    }
+    header {
+        flex-wrap: wrap;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-list {
+        margin-top: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .item-img {
+        flex: 1 1 calc(50% - 20px);
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .logo h1 {
+        font-size: 22px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+ 
+    .nav-list {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-item {
+        font-size: 18px;
+        margin: 0 10px;
+    }
+}
+@media (max-width: 480px) {
+    .item-img {
+        flex: 1 1 100%;
+    }
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-item {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>ShopSphere</h1>
+        </div>
+        <input type="text" placeholder="Search for products..." class="search-bar">
+        <section class="filter">
+            <label for="category">Category</label>
+            <div class="dropdown">
+                <button class="dropbtn">Select Category</button>
+                <div class="dropdown-content">
+                    <a href="index.html">All</a>
+                    <a href="men.html">Men</a>
+                    <a href="women.html">Women</a>
+                    <a href="kids.html">Kids</a>
+                    <a href="footwear.html">Bags & Footwear</a>
+                    <a href="kitchen.html">Home & Kitchen</a>
+                    <a href="jewellery.html">Jewellery & Accessories</a>
+                    <a href="electronic.html">Electronics</a>
+                    <a href="books.html">Sports, Fitness & Books</a>
+                </div>
+            </div>
+        </section>
+        <nav>
+            <ul class="nav-list">
+                <li>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="heart">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="women">
+        <div class="gif">
+            <img src="https://assets.rjimgs.com/rjimgs/rk/images/dp/ecm/202443/1560/028/022.gif" alt="design">
+            <img src="https://www.centura.ca/sites/default/files/2024-11/roomvo_2_-_2024.gif" alt="home">
+        </div>
+         <!--kitchen section start-->
+    <div id="kitchen">
+        <div> <h2>Kitchen & Dining</h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/456372980/ozidk_400.webp" alt="racks">
+                </div>
+                <div class="item-info">
+                    <p>Trendy Spice Racks</p>
+                    <p>Price: Rs.272</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/83898363/k59by_400.webp" alt="boxes">
+                </div>
+                <div class="item-info">
+                    <p>Modern Lunch Boxes</p>
+                    <p>Price: Rs.400</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/62272715/nbwkz_400.webp" alt="Handis">
+                </div>
+                <div class="item-info">
+                    <p>Atylo Sauce Pots & Handis</p>
+                    <p>Price: Rs.650</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/477617475/igmcn_400.webp" alt="tool">
+                </div>
+                <div class="item-info">
+                    <p>Classy Others Kitchen Tools</p>
+                    <p>Price: Rs.125</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/flat-lay-thanksgiving-dinner-table-arrangement_23-2148638882.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="mats">
+                </div>
+                <div class="item-info">
+                    <p>Classy Place Mats</p>
+                    <p>Price: Rs.168</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/211974325/d5iov_400.webp" alt="pans">
+                </div>
+                <div class="item-info">
+                    <p>Trendy Tadka Pans</p>
+                    <p>Price: Rs.145</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    <!--decor section start-->
+    <div id="toys">
+        <div> <h2>home Decor</h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/handmade-dream-catcher-with-feathers-threads-beads-rope-hanging_84176-155.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="catchers">
+                </div>
+                <div class="item-info">
+                    <p>Fabulous Dream Catchers</p>
+                    <p>Price: Rs.150</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/there-are-three-paper-flowers-white-background-with-diamonds-generative-ai_902846-82338.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="wallpaper">
+                </div>
+                <div class="item-info">
+                    <p>Attractive Wallpaper</p>
+                    <p>Price: Rs.132</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/325168201/rrdej_400.webp" alt="mugs">
+                </div>
+                <div class="item-info">
+                    <p>Check out this trending catalog</p>
+                    <p>Price: Rs.270</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/blank-wooden-photo-frame-fresh-colorful-daisies-background_53876-131490.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="home">
+                </div>
+                <div class="item-info">
+                    <p>Photo Frames</p>
+                    <p>Price: Rs.290</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/christmas-decorations-home_214374-1516.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="lights">
+                </div>
+                <div class="item-info">
+                    <p>Indoor String Lights</p>
+                    <p>Price: Rs.330</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/new-year-s-eve-celebration-with-decorations_23-2151070662.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="clocks">
+                </div>
+                <div class="item-info">
+                    <p>Attractive Clocks</p>
+                    <p>Price: Rs.300</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+<!--furnnishing section start-->
+    <div id="">
+        <div> <h2>Home Furnishing</h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/luxurious-vintage-interior-ofroom_1232-4715.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="cover">
+                </div>
+                <div class="item-info">
+                    <p>Classic Diwan Cover Sets</p>
+                    <p>Price: Rs.450</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/396690655/atfrm_400.webp" alt="pillows">
+                </div>
+                <div class="item-info">
+                    <p>Attractive Pillows Covers</p>
+                    <p>Price: Rs.160</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/no-humans-flower-indoors-curtains_943272-1557.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="Bedsheets">
+                </div>
+                <div class="item-info">
+                    <p>Stylish Bedsheets</p>
+                    <p>Price: Rs.225</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/curtain-window-decoration-interior_74190-339.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="Curtains">
+                </div>
+                <div class="item-info">
+                    <p>Graceful Curtains</p>
+                    <p>Price: Rs.290</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://images.meesho.com/images/products/303324510/d6bki_400.webp" alt="cover">
+                </div>
+                <div class="item-info">
+                    <p>Designer Cushion Covers</p>
+                    <p>Price: Rs.265</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/leather-carpet-stacked-floor_126740-713.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="Carpets">
+                </div>
+                <div class="item-info">
+                    <p>Designer Carpets</p>
+                    <p>Price: Rs.274</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    <!--Appliances section start-->
+    <div id="Accessories">
+        <div> <h2>Appliances</h2></div>
+        <div class="item">
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/modern-electric-steam-iron-light-background_602306-54.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="Irons">
+                </div>
+                <div class="item-info">
+                    <p>Elegant Irons</p>
+                    <p>Price: Rs.320</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/still-life-tech-device_23-2150722689.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="fans">
+                </div>
+                <div class="item-info">
+                    <p>Mini Fans</p>
+                    <p>Price: Rs.450</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/close-up-woman-s-hand-grinding-paper-pulp-blender_23-2147845486.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="Mixers">
+                </div>
+                <div class="item-info">
+                    <p>Modern Hand Mixers</p>
+                    <p>Price: Rs.200</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/front-view-young-female-with-washing-machine-folding-dirty-clothes-white-wall_140725-109399.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="Washinng">
+                </div>
+                <div class="item-info">
+                    <p>Washinng Machines & Dryers</p>
+                    <p>Price: Rs.452</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/woman-pouring-hot-water-from-electric-kettle-into-cup-kitchen-closeup_495423-74215.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="Kettles">
+                </div>
+                <div class="item-info">
+                    <p>Kettles & Hot Water Dispensers</p>
+                    <p>Price: Rs.550</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="item-img">
+                <div class="img">
+                    <img src="https://img.freepik.com/free-photo/electric-machines-switches-isolated-white-close-up-connect-marker-cable-device_169016-4131.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid" alt="Chords">
+                </div>
+                <div class="item-info">
+                    <p>Extension Chords</p>
+                    <p>Price: Rs.138</p>
+                    <div class="btn">
+                        <button class="w-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--footer section-->
+<footer>
+    <div class="contact">
+        <h3>Customer Policies</h3>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Returns</a>
+        <a href="#">FAQ</a>
+    </div>
+    <div class="social">
+        <h3>Reach out to us</h3>
+        <a href="#"><img
+                src="https://img.freepik.com/free-vector/instagram-icon_1057-2227.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="insta"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/free-psd/social-media-logo-design_23-2151296987.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="facebook"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/free-vector/youtube-player-icon-with-flat-design_23-2147839964.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="youtube"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/free-vector/twitter-new-logo-x-icon-design_1017-45424.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="twitter"></a>
+        <a href="#"><img
+                src="https://img.freepik.com/premium-photo/linkdin-logo_1080029-102.jpg?uid=R176814687&ga=GA1.1.1216652953.1716308943&semt=ais_hybrid"
+                alt="linkdin"></a>
+    </div>
+    <p>© 2024 ShopSphere</p>
+</footer>
+    </body>
+</html>
+
+</body>
+</html>
+
